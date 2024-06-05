@@ -95,7 +95,6 @@ jobs:
           port: ${{ env.UAT_PORT }}
           script: cp -f /home/ec2-user/deployment/target/digibank.war ${{ env.UAT_TOMCAT }}
 
-
  e2e-tests:
     name: "Run end-2-end tests for the ip ${{ github.event.client_payload.sut }}"
     runs-on: ubuntu-latest
