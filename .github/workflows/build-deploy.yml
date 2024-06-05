@@ -98,14 +98,14 @@ jobs:
 
   e2e-tests:
     needs: [install]
-    name: "Run end-2-end tests for the ip ${{ github.event.client_payload.sut }}"
+    name: "Run end-2-end tests for the ip ${{ env.UAT_IP }}"
     runs-on: ubuntu-latest
         
     steps:
       - uses: actions/checkout@v3
         
       - name: Check IP
-        run: echo "${{ github.event.client_payload.sut }}"
+        run: echo "${{ env.UAT_IP }}"
 
       - uses: actions/setup-node@v3
         with:
