@@ -1,0 +1,20 @@
+name: e2e pipeline
+run-name: Build, Code Quality Check, Deploy, E2E Test - from user @${{ github.actor }}
+
+on: 
+  workflow_dispatch:
+
+env:
+  UAT_IP: 1.1.1.1
+  UAT_TOMCAT: /home/ec2-user/tomcat/apache-tomcat-9.0.71/webapps
+  UAT_PORT: 22
+
+jobs:
+  check_env:
+    runs-on: ubuntu-latest
+    environment: UAT
+    
+    steps: 
+     - name: print IP address
+       run: echo ${{ env.UAT_IP }}
+       
