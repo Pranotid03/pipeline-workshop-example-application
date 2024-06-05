@@ -6,7 +6,7 @@ on:
     inputs:
       sut:
         description: 'Testsystem IP address'
-        default: 1.1.1.2
+        default: http://localhost:8080/
         required: true
 
 env:
