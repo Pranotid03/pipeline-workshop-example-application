@@ -2,11 +2,12 @@ name: build-deploy
 run-name: Build, Deploy to UAT and Test - from user @${{ github.actor }}
 
 on: 
-  workflow_dispatch:
+  push:
+    branches: [ "main" ]
     inputs:
       sut:
         description: 'Testsystem IP address'
-        default: http://localhost:8080/
+        default: http://localhost:8080
         required: true
 
 env:
